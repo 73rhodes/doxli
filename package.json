@@ -4,7 +4,7 @@
   "description": "Get dox documentation for modules on the command line.",
   "main": "doxify.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test/test.js"
   },
   "repository": {
     "type": "git",
