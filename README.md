@@ -20,10 +20,11 @@ Running ```node``` on the command line:
 > foo.bar.help();
 ```
 
-Using doxify to provide ```help``` functions on exported functions.
+Using doxify in a module to provide ```help``` functions on exported functions.
 
 ```
 var doxify = require('doxify');
 // module definition goes here
+// ...
 doxify(__filename);
 ```
