@@ -1,4 +1,4 @@
-var doxify = require('./doxify');
+var doxify = require('../doxify');
 
 /**
  * Escape the given 'html'.
