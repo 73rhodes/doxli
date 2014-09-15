@@ -1,12 +1,11 @@
 doxify
 ======
 
-Get dox documentation for modules on the command line.
-
-This module iterates over a module's exports and adds a ```help```
-function to each one. This let's you fetch dox / jsdoc comments
-for a module's functions when using it from the command line (in
-the node REPL).
+When using Node.JS modules on the command line (the node REPL),
+it's useful to get help on the various module functions. Doxify
+adds a ```help``` command to a module's exports, so you can
+fetch usage information based on the dox / jsdoc comments in
+the module.
 
 Usage
 -----
