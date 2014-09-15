@@ -1,7 +1,7 @@
 doxify
 ======
 
-Interactive help from [dox](https://github.com/visionmedia/dox) when using modules on the command line.
+Interactive help from [dox](https://github.com/visionmedia/dox) when using Node.JS modules on the command line.
 
 When using Node.JS modules on the command line, doxify adds a
 ```help``` command to a module's exports, so you can fetch dox
