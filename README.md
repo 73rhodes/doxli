@@ -1,11 +1,11 @@
 doxli
 =====
 
-Interactive help from [dox](https://github.com/visionmedia/dox) when using Node.JS modules on the command line.
+Interactive help documentation (using [dox](https://github.com/visionmedia/dox)) for Node.JS modules on the command line.
 
 When using Node.JS modules on the command line, doxli adds a
-```help``` command to a module's exports, so you can fetch dox
-/ jsdoc usage details.
+```help``` command to a module's exports, so you can view dox
+/ jsdoc documentation for its exported functions.
 
 Usage
 -----
@@ -16,6 +16,10 @@ Running ```node``` on the command line:
 > var foo = require('foo');
 > var doxli = require('doxli');
 > doxli('./foo.js');
+```
+Module ```foo```'s exported methods now have a ```help``` utility!
+
+```
 > foo.bar.help();
 ```
 
