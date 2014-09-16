@@ -21,6 +21,7 @@ Module ```foo```'s exported methods now have a ```help``` utility!
 
 ```
 > foo.bar.help();
+// => dox / jsdoc comments for this function will be printed here
 ```
 
 Using doxli in a module to provide ```help``` functions on exported functions.
