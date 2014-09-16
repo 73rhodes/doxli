@@ -1,9 +1,9 @@
-doxify
-======
+doxli
+=====
 
 Interactive help from [dox](https://github.com/visionmedia/dox) when using Node.JS modules on the command line.
 
-When using Node.JS modules on the command line, doxify adds a
+When using Node.JS modules on the command line, doxli adds a
 ```help``` command to a module's exports, so you can fetch dox
 / jsdoc usage details.
 
@@ -14,16 +14,16 @@ Running ```node``` on the command line:
 
 ```
 > var foo = require('foo');
-> var doxify = require('doxify');
-> doxify('./foo.js');
+> var doxli = require('doxli');
+> doxli('./foo.js');
 > foo.bar.help();
 ```
 
-Using doxify in a module to provide ```help``` functions on exported functions.
+Using doxli in a module to provide ```help``` functions on exported functions.
 
 ```
-var doxify = require('doxify');
+var doxli = require('doxli');
 // module definition goes here
 // ...
-doxify(__filename);
+doxli(__filename);
 ```
