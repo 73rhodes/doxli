@@ -1,14 +1,14 @@
 {
-  "name": "doxify",
+  "name": "doxli",
   "version": "1.0.0",
   "description": "Get dox documentation for modules on the command line.",
-  "main": "doxify.js",
+  "main": "doxli.js",
   "scripts": {
     "test": "test/test.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/darrenderidder/doxify.git"
+    "url": "https://github.com/darrenderidder/doxli.git"
   },
   "keywords": [
     "dox",
@@ -19,9 +19,9 @@
   "author": "drderidder",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/darrenderidder/doxify/issues"
+    "url": "https://github.com/darrenderidder/doxli/issues"
   },
-  "homepage": "https://github.com/darrenderidder/doxify",
+  "homepage": "https://github.com/darrenderidder/doxli",
   "dependencies": {
     "dox": "^0.5.1"
   }
