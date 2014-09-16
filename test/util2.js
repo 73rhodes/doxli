@@ -1,4 +1,4 @@
-var doxify = require('../doxify');
+var doxli = require('../doxli');
 
 /**
  * Escape the given 'html'.
@@ -36,4 +36,4 @@ exports.countfoo = function (foostring, barstring) {
   return foostring.match(/foo/g).length;
 };
 
-doxify(__filename);
+doxli(__filename);
