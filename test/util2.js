@@ -36,4 +36,4 @@ exports.countfoo = function (foostring, barstring) {
   return foostring.match(/foo/g).length;
 };
 
-doxli(__filename);
+doxli(this);

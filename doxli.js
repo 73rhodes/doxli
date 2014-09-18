@@ -48,14 +48,18 @@ function getdox(name) {
   }
 }
 
-module.exports = function (file) {
-  console.log("doxlify " + __dirname + file);
-  var path = require.resolve(file);
-  console.log("doxlifying " + path);
-  var obj = require(path);
-  djs = dox.parseComments(fs.readFileSync(file).toString());
-  for (var x in obj) {
-    obj[x].help = getdox(x);
+module.exports = function (mod) {
+  var i;
+  var path;
+  for (i in require.cache) {
+    if (mod === require.cache[i].exports) {
+      console.log(require.cache[i]);
+      path = require.cache[i].filename;
+    }
+  }
+  djs = dox.parseComments(fs.readFileSync(path).toString());
+  for (i in mod) {
+    mod[i].help = getdox(i);
   }
 }
 
