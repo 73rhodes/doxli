@@ -53,7 +53,6 @@ module.exports = function (mod) {
   var path;
   for (i in require.cache) {
     if (mod === require.cache[i].exports) {
-      console.log(require.cache[i]);
       path = require.cache[i].filename;
     }
   }
