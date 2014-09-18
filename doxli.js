@@ -6,11 +6,14 @@ var djs  = null;
 function getdox(name) {
   return function () {
     var comment = djs.filter(function (i) {
-      return i.ctx.name === name;
+      return (i.ctx && i.ctx.name === name);
     })[0];
+    if (!comment) {
+      return console.log("Sorry, no dox comments for " + name);
+    }
     var tags = comment.tags;
     var desc = comment.description.full;
-    console.log(name + ' - ' + desc.replace(/(<([^>]+)>)/ig,"") + '\n');
+    console.log(name + '\n' + desc.replace(/(<([^>]+)>)/ig,"") + '\n');
     var i = 0;
     var p = 0;
     var op = "";
@@ -46,7 +49,10 @@ function getdox(name) {
 }
 
 module.exports = function (file) {
-  var obj = require(file);
+  console.log("doxlify " + __dirname + file);
+  var path = require.resolve(file);
+  console.log("doxlifying " + path);
+  var obj = require(path);
   djs = dox.parseComments(fs.readFileSync(file).toString());
   for (var x in obj) {
     obj[x].help = getdox(x);
