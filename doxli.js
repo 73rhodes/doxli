@@ -5,9 +5,14 @@ var djs  = null;
 
 function getdox(name) {
   return function () {
-    var comment = djs.filter(function (i) {
-      return (i.ctx && i.ctx.name === name);
-    })[0];
+    var comment = null;
+    if (name) {
+      comment = djs.filter(function (i) {
+        return (i.ctx && i.ctx.name === name);
+      })[0];
+    } else {
+      comment = djs[0];
+    }
     if (!comment) {
       return console.log("Sorry, no dox comments for " + name);
     }
@@ -57,8 +62,12 @@ module.exports = function (mod) {
     }
   }
   djs = dox.parseComments(fs.readFileSync(path).toString());
-  for (i in mod) {
-    mod[i].help = getdox(i);
+  if (typeof mod === 'object') {
+    for (i in mod) {
+      mod[i].help = getdox(i);
+    }
+  } else if (typeof mod === 'function') {
+    mod.help = getdox();
   }
 }
 
