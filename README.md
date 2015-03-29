@@ -7,6 +7,12 @@ When using Node.JS modules on the command line, doxli adds a
 ```help``` command to a module's exports, so you can view dox
 / jsdoc documentation for its exported functions.
 
+Installation
+------------
+`npm install doxli`
+
+<img src="http://npm.packagequality.com/badge/doxli.png"/>
+
 Usage
 -----
 
