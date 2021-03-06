@@ -11,6 +11,7 @@ Installation
 ------------
 `npm install doxli`
 
+<a href="https://codeclimate.com/github/73rhodes/doxli/maintainability"><img src="https://api.codeclimate.com/v1/badges/4a08cd1e22c0203c0df3/maintainability" /></a>
 <img src="https://packagequality.com/shield/doxli.svg"/>
 
 Usage
