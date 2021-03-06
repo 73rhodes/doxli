@@ -9,7 +9,6 @@
  * @return {String} escaped html
  * @api public
  */
-
 module.exports = function (html) {
   return String(html)
     .replace(/&(?!\w+;)/g, '&amp;')

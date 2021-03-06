@@ -11,7 +11,6 @@ var doxli = require('../doxli');
  * @return {String} escaped html
  * @api public
  */
-
 exports.escape = function (html) {
   return String(html)
     .replace(/&(?!\w+;)/g, '&amp;')
@@ -31,7 +30,6 @@ exports.escape = function (html) {
  * @return {Number} number of times 'foo' occurs
  * @api publi
  */
-
 exports.countfoo = function (foostring, barstring) {
   return foostring.match(/foo/g).length;
 };
