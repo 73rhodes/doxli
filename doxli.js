@@ -19,6 +19,11 @@ function getdox(name) {
     var tags = comment.tags;
     var desc = comment.description.full;
     console.log(name + '\n' + desc.replace(/(<([^>]+)>)/ig,"") + '\n');
+    printTags(tags);
+  }
+}
+
+function printTags(tags) {
     var i = 0;
     var p = 0;
     var op = "";
@@ -50,10 +55,9 @@ function getdox(name) {
           break;
       }
     }
-  }
 }
 
-module.exports = function (mod) {
+function doxli(mod) {
   var i;
   var path;
   for (i in require.cache) {
@@ -71,3 +75,4 @@ module.exports = function (mod) {
   }
 }
 
+module.exports = doxli;

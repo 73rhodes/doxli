@@ -4,7 +4,8 @@
   "description": "Get jsdoc / dox documentation for modules on the command line.",
   "main": "doxli.js",
   "scripts": {
-    "test": "test/test.js"
+    "test": "test/test.js",
+    "lint": "node node_modules/.bin/eslint **/*.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,8 @@
   "homepage": "https://github.com/73rhodes/doxli",
   "dependencies": {
     "dox": "^0.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0"
   }
 }
