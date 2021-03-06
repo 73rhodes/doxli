@@ -1,4 +1,3 @@
-var util = require('util');
 var dox  = require('dox');
 var fs   = require('fs');
 var djs  = null;
@@ -28,8 +27,7 @@ function printTags(tags) {
     var i = 0;
     paramHeader = false;
     for (i = 0; i < tags.length; i++) {
-      const t = tags[i];
-      const result = printTag(t);
+      printTag(tags[i]);
     }
 }
 
@@ -68,6 +66,7 @@ function doxli(mod) {
   var path = getCachedPath(mod);;
   djs = dox.parseComments(fs.readFileSync(path).toString());
   if (typeof mod === 'object') {
+    let i;
     for (i in mod) {
       mod[i].help = getdox(i);
     }

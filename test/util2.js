@@ -31,8 +31,12 @@ exports.escape = function (html) {
  * @api publi
  */
 exports.countfoo = function (foostring, barstring) {
-  const tmp = barstring || 1;
-  return tmp && foostring.match(/foo/g).length;
+  noop(barstring); // ignore param
+  return foostring.match(/foo/g).length;
 };
+
+function noop(x) {
+   return x;
+}
 
 doxli(this);

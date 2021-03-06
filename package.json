@@ -1,6 +1,6 @@
 {
   "name": "doxli",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Get jsdoc / dox documentation for modules on the command line.",
   "main": "doxli.js",
   "scripts": {
