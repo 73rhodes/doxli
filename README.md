@@ -13,6 +13,7 @@ Installation
 
 <a href="https://codeclimate.com/github/73rhodes/doxli/maintainability"><img src="https://api.codeclimate.com/v1/badges/4a08cd1e22c0203c0df3/maintainability" /></a>
 <img src="https://packagequality.com/shield/doxli.svg"/>
+[![DeepScan grade](https://deepscan.io/api/teams/1201/projects/16146/branches/340262/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=1201&pid=16146&bid=340262)
 
 Usage
 -----
