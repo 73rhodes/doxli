@@ -2,6 +2,7 @@ var util = require('util');
 var dox  = require('dox');
 var fs   = require('fs');
 var djs  = null;
+var pHeader = false;
 
 function getdox(name) {
   return function () {
@@ -25,46 +26,46 @@ function getdox(name) {
 
 function printTags(tags) {
     var i = 0;
-    var p = 0;
-    var op = "";
+    paramHeader = false;
     for (i = 0; i < tags.length; i++) {
-      switch(tags[i].type) {
-        case 'example':
-          console.log("Example:\n" + tags[i].string);
-          break;
-        case 'param':
-          if(!p) {
-            console.log("Parameters:");
-            p++;
-          }
-          op = tags[i].optional ? "Optional. " : " ";
-          console.log(
-            '  ' + tags[i].name +
-            ' (' + tags[i].types.toString() + ') - ' +
-            op + tags[i].description + '\n'
-          );
-          break;
-        case 'return':
-          console.log(
-            'Returns:\n  (' +
-            tags[i].types.toString() +
-            ') - ' + tags[i].description + '\n'
-          );
-          break;
-        default:
-          break;
-      }
+      const t = tags[i];
+      const result = printTag(t);
     }
 }
 
-function doxli(mod) {
-  var i;
-  var path;
-  for (i in require.cache) {
+function printTag(t) {
+   switch(t.type) {
+     case 'example':
+       console.log("Example:\n" + t.string);
+       break;
+     case 'param':
+       if(!paramHeader) {
+         console.log("Parameters:");
+         paramHeader = true;
+       }
+       var op = t.optional ? "Optional. " : " ";
+       console.log( `  ${t.name} (${t.types.toString()}) - ${op}${t.description}\n`);
+       break;
+     case 'return':
+       console.log(`Returns:\n  (${t.types.toString()}) - ${t.description}\n`);
+       break;
+     default:
+       break;
+   }
+}
+
+function getCachedPath(mod) {
+  let path = null;
+  for (var i in require.cache) {
     if (mod === require.cache[i].exports) {
       path = require.cache[i].filename;
     }
   }
+  return path;
+}
+
+function doxli(mod) {
+  var path = getCachedPath(mod);;
   djs = dox.parseComments(fs.readFileSync(path).toString());
   if (typeof mod === 'object') {
     for (i in mod) {
