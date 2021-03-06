@@ -11,7 +11,7 @@ Installation
 ------------
 `npm install doxli`
 
-<img src="http://npm.packagequality.com/badge/doxli.png"/>
+<img src="https://packagequality.com/shield/doxli.svg"/>
 
 Usage
 -----
